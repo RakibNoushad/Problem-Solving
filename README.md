@@ -4,6 +4,8 @@
 
 ### Online Judge
 1. CodeForces
-2. LightOJ
-3. TimusOnlineJudge
-4. URI
+2. UVA
+3. URI
+4. LightOJ
+5. TimusOnlineJudge
+6. HackerRank

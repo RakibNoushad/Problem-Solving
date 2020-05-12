@@ -1,19 +1,18 @@
-#include<bits/stdc++.h>
-#include<string>
-#include<algorithm>
-using namespace std;
-char b[10010];
+#include <stdio.h>
 
 int main()
 {
     long long int n,m,i=0,j,q,y,aa,bb,f=0,k,min=10000010,t,r,s=0,u;
     double div, ek, dui;
     char a[100010];
-        cin >> n >> m >> q;
-        y= max(n,m);
-        y= max(y,q);
+        scanf("%lld %lld %lld", &n,&m,&q);
+        if(n>=m)
+            y=n;
+        else y=m;
 
-        cout << y << " eh o maior\n";
+            if(q>=y) y=q;
+
+        printf("%lld eh o maior\n",y);
 
 
     return 0;

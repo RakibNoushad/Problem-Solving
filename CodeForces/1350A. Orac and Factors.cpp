@@ -18,7 +18,14 @@ const int MX = 1e5 + 7 ;
 const int INF = 1e8 + 7 ;
  
 char x[200010],y[200010],z[200010];
-double a[200010],b[200010],c[200010],d[200010];
+int a[200010],b[200010],c[200010],d[200010];
+ 
+ 
+int choto(int n, int i)
+{
+    if(n%i==0) return i;
+    else choto(n, i+1); 
+}
  
  
 int main()
@@ -27,35 +34,26 @@ int main()
         freopen("in.txt", "r", stdin);
         freopen("out.txt", "w", stdout);
     #endif
-    LLI n=1, t, i,mn=200,m,pos,mx=0,l,dif,f=0;
+    LLI n=1, t, i,mn=200,m,pos,mx=0,l,dif,f=0,k,j;
     LLI sum=0,sumo;
-    double j,k;
- 
-    vector<long long> v(25830);
-    v[0]=1;
-    v[1]=2;
-    for(i=2;i<25830;i++)
-    {
-        v[i]=v[i-1]+(i*2)+(i-1); 
-    }
- 
- 
+    
     wl(t)
     {
-        cin >> n;
-        f=0;
-        while(n>=2)
+        cin >> n >> k;
+        for(j=1;j<=k;j++)
         {
-            pos=lb(v,n);
-            if(v[pos]>n)pos--;
-            f++;
-            n=n-v[pos];
+            m=choto(n, 2);
+            if(m==2)
+            {
+                n+=((k-j)*2);
+                n+=2;
+                break;
+            }
+            else n+=m;
         }
-        cout << f << endl;
+        cout << n << endl;
+ 
     }
- 
- 
-   
- 
+    
 return 0;
 }

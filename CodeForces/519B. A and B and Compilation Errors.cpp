@@ -14,12 +14,8 @@ typedef vector<int> vi;
 #define wl(t)    cin >> t; while(t--)
 #define fr(t)  cin >> t; for(i=0;i<t;i++)
  
-const int MX = 1e5 + 7 ;
-const int INF = 1e8 + 7 ;
- 
 char x[200010],y[200010],z[200010];
-double a[200010],b[200010],c[200010],d[200010];
- 
+int a[200010],b[200010],c[200010],d[200010];
  
 int main()
 {
@@ -27,35 +23,43 @@ int main()
         freopen("in.txt", "r", stdin);
         freopen("out.txt", "w", stdout);
     #endif
-    LLI n=1, t, i,mn=200,m,pos,mx=0,l,dif,f=0;
-    LLI sum=0,sumo;
-    double j,k;
- 
-    vector<long long> v(25830);
-    v[0]=1;
-    v[1]=2;
-    for(i=2;i<25830;i++)
+    int n, t, i, j,k,mn=200,m,pos,mx=0,l,dif,f=0;
+    LLI sum=0;
+    cin >> n;
+    for(i=0;i<n;i++)
     {
-        v[i]=v[i-1]+(i*2)+(i-1); 
+        cin >> a[i];
     }
- 
- 
-    wl(t)
+    sort(a,a+n);
+    for(i=0;i<n-1;i++)
     {
-        cin >> n;
-        f=0;
-        while(n>=2)
+        cin >> b[i];
+    }
+    sort(b,b+n-1);
+ 
+    for(i=0;i<n-2;i++)
+    {
+        cin >> c[i];
+    }
+    sort(c,c+n-2);
+ 
+    for(i=0;i<n;i++)
+    {
+        if(a[i]!=b[i])
         {
-            pos=lb(v,n);
-            if(v[pos]>n)pos--;
-            f++;
-            n=n-v[pos];
+            cout << a[i] << endl;
+            break;
         }
-        cout << f << endl;
+    }
+    for(i=0;i<n-1;i++)
+    {
+        if(b[i]!=c[i])
+        {
+            cout << b[i] << endl;
+            break;
+        }
     }
  
- 
-   
  
 return 0;
 }

@@ -1,10 +1,10 @@
 #include<bits/stdc++.h>
 using namespace std;
-
+ 
 typedef unsigned long long int  ULLI;
 typedef long long int  LLI;
 typedef vector<int> vi;
-
+ 
 #define SQR(x) ((x)*(x))
 #define pb push_back
 #define pw(x,y) (int)pow(x,y)+0.5
@@ -13,13 +13,13 @@ typedef vector<int> vi;
 #define srt(a)   sort(a.begin(),a.end())
 #define wl(t)    cin >> t; while(t--)
 #define fr(t)  cin >> t; for(i=0;i<t;i++)
-
+ 
 const int MX = 1e5 + 7 ;
 const int INF = 1e8 + 7 ;
  
 char x[200010],y[200010],z[200010];
 int a[200010],b[200010],c[200010],d[200010];
-
+ 
  
 int main()
 {
@@ -71,11 +71,6 @@ int main()
                 cout << b[f] << endl;
         }
     }
-
-    
-
-
-   
-
+ 
 return 0;
 }

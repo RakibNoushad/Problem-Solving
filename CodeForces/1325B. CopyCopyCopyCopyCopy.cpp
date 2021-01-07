@@ -7,19 +7,14 @@ typedef vector<int> vi;
  
 #define SQR(x) ((x)*(x))
 #define pb push_back
-#define pw(x,y) (int)pow(x,y)+0.5
+#define pwr(x,y) (int)pow(x,y)+0.5
 #define ub(a,b)  upper_bound(a.begin(),a.end(),b)-a.begin()
 #define lb(a,b)  lower_bound(a.begin(),a.end(),b)-a.begin()
 #define srt(a)   sort(a.begin(),a.end())
 #define wl(t)    cin >> t; while(t--)
 #define fr(t)  cin >> t; for(i=0;i<t;i++)
  
-const int MX = 1e5 + 7 ;
-const int INF = 1e8 + 7 ;
- 
 char x[200010],y[200010],z[200010];
-double a[200010],b[200010],c[200010],d[200010];
- 
  
 int main()
 {
@@ -27,35 +22,31 @@ int main()
         freopen("in.txt", "r", stdin);
         freopen("out.txt", "w", stdout);
     #endif
-    LLI n=1, t, i,mn=200,m,pos,mx=0,l,dif,f=0;
-    LLI sum=0,sumo;
-    double j,k;
- 
-    vector<long long> v(25830);
-    v[0]=1;
-    v[1]=2;
-    for(i=2;i<25830;i++)
-    {
-        v[i]=v[i-1]+(i*2)+(i-1); 
-    }
- 
+    int n, t, i, j,k,f=0,mn,m,dif=0,pos,mx,l;
+    LLI sum =0;
  
     wl(t)
     {
+        mx=0,f=0;
         cin >> n;
-        f=0;
-        while(n>=2)
+        vi v(n);
+        for(i=0;i<n;i++)
         {
-            pos=lb(v,n);
-            if(v[pos]>n)pos--;
-            f++;
-            n=n-v[pos];
+            cin >> v[i];
+ 
         }
-        cout << f << endl;
+        srt(v);
+        j=v[0];
+        for(i=1;i<n;i++)
+        {
+            if(j!=v[i])
+            {
+                j=v[i];
+                f++;
+            }
+        }
+        cout << f+1 << endl;
     }
- 
- 
-   
- 
+
 return 0;
 }

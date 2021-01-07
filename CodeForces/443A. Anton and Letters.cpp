@@ -14,12 +14,8 @@ typedef vector<int> vi;
 #define wl(t)    cin >> t; while(t--)
 #define fr(t)  cin >> t; for(i=0;i<t;i++)
  
-const int MX = 1e5 + 7 ;
-const int INF = 1e8 + 7 ;
- 
 char x[200010],y[200010],z[200010];
-double a[200010],b[200010],c[200010],d[200010];
- 
+int a[200010],b[200010],c[200010],d[200010];
  
 int main()
 {
@@ -27,35 +23,22 @@ int main()
         freopen("in.txt", "r", stdin);
         freopen("out.txt", "w", stdout);
     #endif
-    LLI n=1, t, i,mn=200,m,pos,mx=0,l,dif,f=0;
-    LLI sum=0,sumo;
-    double j,k;
+    int n, t, i, j,k,mn=200,m,pos,mx=0,l,dif,f=0;
+    LLI sum=0;
+    cin.getline(x,1100);
+    n=strlen(x);
  
-    vector<long long> v(25830);
-    v[0]=1;
-    v[1]=2;
-    for(i=2;i<25830;i++)
+    for(i=1;i<n;i++)
     {
-        v[i]=v[i-1]+(i*2)+(i-1); 
+        a[x[i]]++;
     }
- 
- 
-    wl(t)
+    for(i=97;i<123;i++)
     {
-        cin >> n;
-        f=0;
-        while(n>=2)
-        {
-            pos=lb(v,n);
-            if(v[pos]>n)pos--;
-            f++;
-            n=n-v[pos];
-        }
-        cout << f << endl;
+        if(a[i]>0) f++;
     }
- 
- 
+    cout << f << endl;
    
+ 
  
 return 0;
 }
